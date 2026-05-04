@@ -1,0 +1,356 @@
+/* =============================================================
+ * Slatewave
+ * Dark slate + teal theme for Anytype.
+ * Palette sourced from vscode-slatewave and slatewave-omp.
+ * License: WTFPL v2 — see LICENSE.
+ *
+ * Install: copy to Anytype's work directory as `custom.css`,
+ * then File > Apply custom CSS (twice).
+ * ============================================================= */
+
+/* ---------- Raw palette ---------- */
+:root {
+  /* Surfaces */
+  --sw-slate-editor: #282c34;   /* canvas bg */
+  --sw-slate-chrome: #21252b;   /* sidebar / raised chrome */
+  --sw-slate-900:    #0f172a;
+  --sw-slate-800:    #1e293b;
+  --sw-slate-700:    #334155;
+  --sw-slate-600:    #475569;
+  --sw-slate-500:    #64748b;
+  --sw-slate-400:    #94a3b8;
+  --sw-slate-300:    #cbd5e1;
+  --sw-slate-200:    #e2e8f0;
+  --sw-slate-100:    #f1f5f9;
+  --sw-slate-50:     #f8fafc;
+
+  /* Signature */
+  --sw-teal-200: #99f6e4;
+  --sw-teal-300: #5eead4;
+  --sw-teal-400: #2dd4bf;
+  --sw-teal-700: #0f766e;
+
+  /* Accents */
+  --sw-sky-300:    #7dd3fc;
+  --sw-sky-400:    #38bdf8;
+  --sw-rose-400:   #fb7185;
+  --sw-pink-400:   #f472b6;
+  --sw-purple:     #b388ff;
+  --sw-amber-400:  #fbbf24;
+  --sw-orange-400: #fb923c;
+  --sw-emerald-400:#34d399;
+}
+
+/* ---------- Light mode (default in :root) ---------- */
+:root {
+  /* Text */
+  --color-text-primary: var(--sw-slate-900) !important;
+  --color-text-secondary: var(--sw-slate-700) !important;
+  --color-text-tertiary: var(--sw-slate-500) !important;
+  --color-text-inversion: var(--sw-slate-50) !important;
+  --color-text-primary-inversion: var(--sw-slate-50) !important;
+  --color-text-secondary-inversion: var(--sw-slate-300) !important;
+  --color-text-tertiary-inversion: var(--sw-slate-400) !important;
+
+  /* Shape (borders, dividers) */
+  --color-shape-primary: var(--sw-slate-300) !important;
+  --color-shape-secondary: var(--sw-slate-200) !important;
+  --color-shape-tertiary: var(--sw-slate-100) !important;
+  --color-shape-secondary-inversion: var(--sw-slate-700) !important;
+
+  --color-shape-highlight-dark: rgba(15, 23, 42, 0.18) !important;
+  --color-shape-highlight-medium: rgba(15, 23, 42, 0.10) !important;
+  --color-shape-highlight-light: rgba(15, 23, 42, 0.05) !important;
+  --color-shape-highlight-add: rgba(15, 118, 110, 0.18) !important;
+  --color-shape-highlight-change: rgba(56, 189, 248, 0.18) !important;
+  --color-shape-highlight-remove: rgba(225, 29, 72, 0.18) !important;
+
+  /* Control (buttons, inputs, accent) */
+  --color-control-accent: var(--sw-teal-700) !important;
+  --color-control-active: var(--sw-teal-700) !important;
+  --color-control-active-inversion: var(--sw-teal-300) !important;
+  --color-control-inactive: var(--sw-slate-400) !important;
+  --color-control-bg: var(--sw-slate-50) !important;
+
+  /* Background */
+  --color-bg-primary: #ffffff !important;
+  --color-bg-secondary: var(--sw-slate-50) !important;
+  --color-bg-tertiary: var(--sw-slate-100) !important;
+  --color-bg-primary-inversion: var(--sw-slate-editor) !important;
+  --color-bg-loader: rgba(255, 255, 255, 0.7) !important;
+
+  /* System (selection, accent ramps) */
+  --color-system-accent-125: var(--sw-teal-700) !important;
+  --color-system-accent-100: var(--sw-teal-700) !important;
+  --color-system-accent-50: rgba(15, 118, 110, 0.5) !important;
+  --color-system-accent-25: rgba(15, 118, 110, 0.25) !important;
+  --color-system-selection: rgba(15, 118, 110, 0.22) !important;
+  --color-system-drop-zone: rgba(15, 118, 110, 0.18) !important;
+
+  /* Named colors (light mode is more saturated/darker) */
+  --color-grey: var(--sw-slate-500) !important;
+  --color-yellow: #b45309 !important;       /* amber-700 */
+  --color-orange: #c2410c !important;       /* orange-700 */
+  --color-red: #e11d48 !important;          /* rose-600 */
+  --color-pink: #db2777 !important;         /* pink-600 */
+  --color-purple: #7c3aed !important;       /* violet-600 */
+  --color-blue: #0369a1 !important;         /* sky-700 */
+  --color-ice: #0e7490 !important;          /* cyan-700 */
+  --color-teal: var(--sw-teal-700) !important;
+  --color-lime: #4d7c0f !important;         /* lime-700 */
+  --color-green: #047857 !important;        /* emerald-700 */
+}
+
+/* ---------- Dark mode ---------- */
+html.themeDark {
+  /* Text */
+  --color-text-primary: var(--sw-slate-200) !important;
+  --color-text-secondary: var(--sw-slate-300) !important;
+  --color-text-tertiary: var(--sw-slate-500) !important;
+  --color-text-inversion: var(--sw-slate-900) !important;
+  --color-text-primary-inversion: var(--sw-slate-900) !important;
+  --color-text-secondary-inversion: var(--sw-slate-700) !important;
+  --color-text-tertiary-inversion: var(--sw-slate-500) !important;
+
+  /* Shape */
+  --color-shape-primary: var(--sw-slate-600) !important;
+  --color-shape-secondary: var(--sw-slate-700) !important;
+  --color-shape-tertiary: var(--sw-slate-800) !important;
+  --color-shape-secondary-inversion: var(--sw-slate-200) !important;
+
+  --color-shape-highlight-dark: rgba(226, 232, 240, 0.18) !important;
+  --color-shape-highlight-medium: rgba(226, 232, 240, 0.10) !important;
+  --color-shape-highlight-light: rgba(226, 232, 240, 0.05) !important;
+  --color-shape-highlight-light-solid: var(--sw-slate-700) !important;
+  --color-shape-highlight-add: rgba(94, 234, 212, 0.22) !important;
+  --color-shape-highlight-change: rgba(56, 189, 248, 0.22) !important;
+  --color-shape-highlight-remove: rgba(251, 113, 133, 0.22) !important;
+
+  /* Control */
+  --color-control-accent: var(--sw-teal-300) !important;
+  --color-control-active: var(--sw-teal-300) !important;
+  --color-control-active-inversion: var(--sw-teal-700) !important;
+  --color-control-inactive: var(--sw-slate-600) !important;
+  --color-control-bg: var(--sw-slate-chrome) !important;
+
+  /* Background
+   *
+   * Anytype layers translucent overlays on top of bg-secondary for the
+   * channel-list rail and other "raised" surfaces. With the chrome value
+   * (#21252b) underneath, those overlays land near slate-900 and the rail
+   * reads almost black. Setting bg-secondary one step toward the editor
+   * (#242831) keeps the visible hierarchy — vault < rail < canvas — without
+   * collapsing the rail to pitch black.
+   */
+  --color-bg-primary: var(--sw-slate-editor) !important;
+  --color-bg-secondary: #242831 !important;
+  --color-bg-tertiary: var(--sw-slate-800) !important;
+  --color-bg-primary-inversion: #ffffff !important;
+  --color-bg-loader: rgba(40, 44, 52, 0.7) !important;
+
+  /* System */
+  --color-system-accent-125: var(--sw-teal-200) !important;
+  --color-system-accent-100: var(--sw-teal-300) !important;
+  --color-system-accent-50: rgba(94, 234, 212, 0.5) !important;
+  --color-system-accent-25: rgba(94, 234, 212, 0.25) !important;
+  --color-system-selection: rgba(94, 234, 212, 0.25) !important;
+  --color-system-drop-zone: rgba(94, 234, 212, 0.18) !important;
+
+  /* Named colors (dark mode is brighter/desaturated) */
+  --color-grey: var(--sw-slate-400) !important;
+  --color-yellow: var(--sw-amber-400) !important;
+  --color-orange: var(--sw-orange-400) !important;
+  --color-red: var(--sw-rose-400) !important;
+  --color-pink: var(--sw-pink-400) !important;
+  --color-purple: var(--sw-purple) !important;
+  --color-blue: var(--sw-sky-400) !important;
+  --color-ice: var(--sw-sky-300) !important;
+  --color-teal: var(--sw-teal-300) !important;
+  --color-lime: var(--sw-teal-200) !important;
+  --color-green: var(--sw-emerald-400) !important;
+
+  /* Default text fallback */
+  color: var(--sw-slate-200) !important;
+}
+
+/* ---------- Highlight backgrounds (.bgColor-*) ---------- */
+/* Anytype uses these for inline text highlights. Keep them legible
+   on the canvas and consistent with the named-color palette. */
+
+:root {
+  .bgColor-grey   { background: rgba(100, 116, 139, 0.18) !important; }
+  .bgColor-yellow { background: rgba(251, 191, 36, 0.22) !important; }
+  .bgColor-orange { background: rgba(251, 146, 60, 0.22) !important; }
+  .bgColor-red    { background: rgba(251, 113, 133, 0.22) !important; }
+  .bgColor-pink   { background: rgba(244, 114, 182, 0.22) !important; }
+  .bgColor-purple { background: rgba(179, 136, 255, 0.22) !important; }
+  .bgColor-blue   { background: rgba(56, 189, 248, 0.22) !important; }
+  .bgColor-ice    { background: rgba(125, 211, 252, 0.22) !important; }
+  .bgColor-teal   { background: rgba(94, 234, 212, 0.22) !important; }
+  .bgColor-lime   { background: rgba(153, 246, 228, 0.22) !important; }
+  .bgColor-green  { background: rgba(52, 211, 153, 0.22) !important; }
+}
+
+html.themeDark {
+  .bgColor-grey   { background: rgba(148, 163, 184, 0.18) !important; }
+  .bgColor-yellow { background: rgba(251, 191, 36, 0.20) !important; }
+  .bgColor-orange { background: rgba(251, 146, 60, 0.20) !important; }
+  .bgColor-red    { background: rgba(251, 113, 133, 0.22) !important; }
+  .bgColor-pink   { background: rgba(244, 114, 182, 0.22) !important; }
+  .bgColor-purple { background: rgba(179, 136, 255, 0.22) !important; }
+  .bgColor-blue   { background: rgba(56, 189, 248, 0.22) !important; }
+  .bgColor-ice    { background: rgba(125, 211, 252, 0.22) !important; }
+  .bgColor-teal   { background: rgba(94, 234, 212, 0.22) !important; }
+  .bgColor-lime   { background: rgba(153, 246, 228, 0.22) !important; }
+  .bgColor-green  { background: rgba(52, 211, 153, 0.22) !important; }
+}
+
+/* Inline highlight pills get rounded corners */
+.bgColor,
+[style*="background-color"] {
+  border-radius: 3px;
+}
+mark,
+span[style*="background-color"] {
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* ---------- Tag colors (.isMultiSelect.tagColor-*) ---------- */
+
+:root {
+  .isMultiSelect.tagColor-grey   { color: #ffffff !important;            background: var(--sw-slate-500) !important; }
+  .isMultiSelect.tagColor-yellow { color: var(--sw-slate-900) !important; background: var(--sw-amber-400) !important; }
+  .isMultiSelect.tagColor-orange { color: var(--sw-slate-900) !important; background: var(--sw-orange-400) !important; }
+  .isMultiSelect.tagColor-red    { color: #ffffff !important;            background: var(--sw-rose-400) !important; }
+  .isMultiSelect.tagColor-pink   { color: var(--sw-slate-900) !important; background: var(--sw-pink-400) !important; }
+  .isMultiSelect.tagColor-purple { color: var(--sw-slate-900) !important; background: var(--sw-purple) !important; }
+  .isMultiSelect.tagColor-blue   { color: var(--sw-slate-900) !important; background: var(--sw-sky-400) !important; }
+  .isMultiSelect.tagColor-ice    { color: var(--sw-slate-900) !important; background: var(--sw-sky-300) !important; }
+  .isMultiSelect.tagColor-teal   { color: var(--sw-slate-900) !important; background: var(--sw-teal-300) !important; }
+  .isMultiSelect.tagColor-lime   { color: var(--sw-slate-900) !important; background: var(--sw-teal-200) !important; }
+  .isMultiSelect.tagColor-green  { color: var(--sw-slate-900) !important; background: var(--sw-emerald-400) !important; }
+}
+
+html.themeDark {
+  .isMultiSelect.tagColor-grey   { color: var(--sw-slate-100) !important; background: var(--sw-slate-600) !important; }
+  .isMultiSelect.tagColor-yellow { color: var(--sw-slate-900) !important; background: var(--sw-amber-400) !important; }
+  .isMultiSelect.tagColor-orange { color: var(--sw-slate-900) !important; background: var(--sw-orange-400) !important; }
+  .isMultiSelect.tagColor-red    { color: var(--sw-slate-900) !important; background: var(--sw-rose-400) !important; }
+  .isMultiSelect.tagColor-pink   { color: var(--sw-slate-900) !important; background: var(--sw-pink-400) !important; }
+  .isMultiSelect.tagColor-purple { color: var(--sw-slate-900) !important; background: var(--sw-purple) !important; }
+  .isMultiSelect.tagColor-blue   { color: var(--sw-slate-900) !important; background: var(--sw-sky-400) !important; }
+  .isMultiSelect.tagColor-ice    { color: var(--sw-slate-900) !important; background: var(--sw-sky-300) !important; }
+  .isMultiSelect.tagColor-teal   { color: var(--sw-slate-900) !important; background: var(--sw-teal-300) !important; }
+  .isMultiSelect.tagColor-lime   { color: var(--sw-slate-900) !important; background: var(--sw-teal-200) !important; }
+  .isMultiSelect.tagColor-green  { color: var(--sw-slate-900) !important; background: var(--sw-emerald-400) !important; }
+}
+
+/* ---------- Targeted UI rules ---------- */
+
+/* Sidebar / vault chrome — slightly deeper than canvas, like VSCode/Obsidian */
+html.themeDark .vault {
+  background-color: var(--sw-slate-chrome) !important;
+}
+
+/* Internal mentions / object links: teal */
+markupmention {
+  color: var(--sw-teal-700) !important;
+}
+html.themeDark markupmention {
+  color: var(--sw-teal-300) !important;
+}
+
+/* External links: sky */
+.blocks .block.blockText markuplink {
+  color: #0369a1 !important;
+}
+html.themeDark .blocks .block.blockText markuplink {
+  color: var(--sw-sky-400) !important;
+}
+
+/* Inline code: pale-teal text on a slate-800 pill */
+.blocks markupcode {
+  background: var(--sw-slate-100) !important;
+  color: var(--sw-teal-700) !important;
+  border-radius: 4px;
+  padding: 0.05em 0.3em;
+}
+html.themeDark .blocks markupcode {
+  background: var(--sw-slate-800) !important;
+  color: var(--sw-teal-200) !important;
+}
+
+/* Code blocks: bordered shell */
+.blocks .block.blockCode .wrapContent {
+  background: var(--sw-slate-100) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  border-radius: 6px;
+}
+html.themeDark .blocks .block.blockCode .wrapContent {
+  background: var(--sw-slate-800) !important;
+  border: 1px solid rgba(226, 232, 240, 0.08) !important;
+}
+
+/* Callouts: rounded */
+.blocks .block.blockText.textCallout > .wrapContent {
+  border-radius: 6px;
+}
+
+/* Quote blocks: teal left rule, italic */
+.blocks .block.blockText.textQuote > .wrapContent {
+  border-left: 2px solid var(--sw-teal-700) !important;
+  font-style: italic;
+}
+html.themeDark .blocks .block.blockText.textQuote > .wrapContent {
+  border-left-color: var(--sw-teal-300) !important;
+}
+
+/* ---------- Cover gradients ----------
+ * Anytype's `.cover.type3.{yellow,red,blue,teal}` named gradients reference
+ * `--color-yellow / --color-red / --color-purple / --color-blue / --color-ice
+ * / --color-teal`, all of which we've already retuned — so those covers pick
+ * up Slatewave automatically. The four mixed-name gradients below
+ * (`pinkOrange`, `bluePink`, `greenOrange`, `sky`) are hardcoded in upstream
+ * SCSS and bypass our variables; map them onto the Slatewave palette so a
+ * channel cover can never reintroduce a foreign hue.
+ */
+.cover.type3.pinkOrange {
+  background-image: linear-gradient(180deg, var(--sw-purple) 0%, var(--sw-rose-400) 100%) !important;
+}
+.cover.type3.bluePink {
+  background-image: linear-gradient(180deg, var(--sw-sky-400) 0%, var(--sw-pink-400) 100%) !important;
+}
+.cover.type3.greenOrange {
+  background-image: linear-gradient(180deg, var(--sw-teal-300) 0%, var(--sw-amber-400) 100%) !important;
+}
+.cover.type3.sky {
+  background-image: linear-gradient(180deg, var(--sw-sky-400) 0%, var(--sw-teal-200) 100%) !important;
+}
+
+/* ---------- Stock object-type icons ----------
+ * Pages / Tasks / Collections / Bookmarks / Images render as <img> tags
+ * pointing at SVGs baked into the app bundle, so pure CSS can't recolor
+ * them without DOM inspection per icon. The compromise: a small saturation
+ * pull-back so stock icon hues don't fight the muted Slatewave palette.
+ * For a true palette-matched recolor, replace each icon's mask-image
+ * after pulling its SVG path from the running app's DevTools.
+ */
+html.themeDark .iconObject .iconImage,
+html.themeDark .iconObject img:not(.iconError) {
+  filter: saturate(0.85);
+}
+
+/* Scrollbar: slate thumb, teal on active */
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(51, 65, 85, 0.45) !important;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(94, 234, 212, 0.55) !important;
+}
